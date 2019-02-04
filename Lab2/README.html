@@ -1,0 +1,47 @@
+<!doctype html><html><head> 				<link rel="stylesheet" href="markdown.css"> 				<style> 				  .markdown-body { 				    box-sizing: border-box; 				    min-width: 200px; 				    max-width: 980px; 				    margin: 0 auto; 				    padding: 45px; 				  } 				  @media (max-width: 767px) { 				    .markdown-body { 				      padding: 15px; 				    } 				  } 				</style> 				</head><body class="markdown-body"><h1 id="lab2modeltrainingtestinganddeployingwithamazonsagemaker">Lab2 - Model training, testing and deploying with Amazon SageMaker</h1>
+<p>In the second lab, you are going to extract value from the data you got to know in the first lab.</p>
+<h3 id="anamesetupsetupanamazonsagemakernotebooka"><a name="setup">Setup an Amazon Sagemaker Notebook</a></h3>
+<ol>
+<li><p>In case you have been logged out, sign into the AWS Management Console <a href="https://console.aws.amazon.com/">https://console.aws.amazon.com/</a>, and confirm that you are working the correct region.</p></li>
+<li><p>We will need the value of the SagemakerRoleArn resource created by the CloudFormation stack from Lab 1. Use <a href="https://console.aws.amazon.com/cloudformation/home#/stacks?filter=active">this link</a> to go to the CloudFormation console, click on the <strong>name</strong> of your stack. </p></li>
+</ol>
+<p><img src="images/image-sagemaker-create-notebook-create-iam-role.png" alt="image-iam-role-select" /></p>
+<ol start="3">
+<li>Now click the <strong>Outputs</strong> tab and copy the <strong>Arn Value</strong> of the SageMakerRoleArn output. Save this value for later, you will soon need it.</li>
+</ol>
+<p><img src="images/image-sagemaker-create-notebook-create-iam-role-output.png" alt="image-iam-role-output" /></p>
+<ol start="4">
+<li><p>Now use <a href="https://console.aws.amazon.com/sagemaker/home#/landing">this link</a> to go to Amazon Sagemaker dashboard. </p></li>
+<li><p>Start creating a Notebook by clicking <strong>Create notebook instance</strong> on the Amazon Sagemaker dashboard.</p></li>
+</ol>
+<p><img src="images/image-sagemaker-create-notebook.png" alt="image-sagemaker-create-notebook" /></p>
+<ol start="6">
+<li>Enter the Sagemaker Notebook settings required to create the Notebook. These are</li>
+</ol>
+<ul>
+<li>Notebook instance name:  <strong>[Your-initials]-ml-id-recommender</strong></li>
+<li>Notebook instance type: <strong>ml-t2-medium</strong></li>
+<li>IAM role:</li>
+<li>Choose <strong>Enter a custom IAM role ARN</strong></li>
+<li>Enter the SageMakerRoleArn that was part of the output from the CloudFormation stack into the <strong>Custom IAM role ARN</strong> field. This role gives sagemaker access to the bucket created in the CloudFormation stack.</li>
+</ul>
+<p><img src="images/image-sagemaker-create-notebook-settings.png" alt="image-20181022130601882" /></p>
+<ol start="7">
+<li>Leave all other setting at their default values and then click <strong>Create notebook instance</strong>, then wait for the instance to have status <strong>InService</strong></li>
+</ol>
+<hr />
+<h2 id="jupyternotebooklab">Jupyter Notebook Lab</h2>
+<p>The rest of this lab will be done by working through the notebook document, which has three major parts:</p>
+<ul>
+<li>Data preparation</li>
+<li>Sagemaker Model Training</li>
+<li>Deploy Endpoint and Test Inference</li>
+</ul>
+<ol>
+<li><p>On the Notebook instances page in Amazon SageMaker, open the notebook by clicking the <strong>Open Jupyter</strong> or <strong>Open JupyterLab</strong> link in the Actions column. A new browser tab will open showing the notebook home screen.</p></li>
+<li><p>For this lab, you will be using a prepared Jupyter Notebook document. To import it, click <strong>Upload</strong> in the top right section of the notebook home screen or if using JupyterLab click on the <strong>Upload Arrow</strong>. Navigate to the <strong>Lab2</strong> folder of the locally downloaded Immersion Day material and select the <strong>ML-Immersion-Day-Lab-2.ipynb</strong> file.</p>
+<p><img src="images/image-notebook-upload.png" alt="upload" /></p>
+<p>or</p>
+<p><img src="images/image-notebook-upload-jupyterlab.png" alt="upload-jupyterlab" /></p></li>
+<li><p>The document is uploaded and should appear in the files list of the home screen. Open it by clicking on it, which will open a new browser tab. <strong>Continue working with the lab from there.</strong></p></li>
+</ol></body></html>

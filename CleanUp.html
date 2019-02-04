@@ -1,0 +1,39 @@
+<!doctype html><html><head> 				<link rel="stylesheet" href="markdown.css"> 				<style> 				  .markdown-body { 				    box-sizing: border-box; 				    min-width: 200px; 				    max-width: 980px; 				    margin: 0 auto; 				    padding: 45px; 				  } 				  @media (max-width: 767px) { 				    .markdown-body { 				      padding: 15px; 				    } 				  } 				</style> 				</head><body class="markdown-body"><h1 id="cleanupmlimmersionday">Clean up - ML Immersion Day</h1>
+<ol>
+<li>From Lab3, delete the CloudFormation stacks by going to the CloudFormation console page. For each of the following items, select the corresponding row in the table, then click <strong>Actions -> Delete Stack</strong></li>
+</ol>
+<ul>
+<li>Production Endpoint Stack: <strong>prod-[Your-Initials]-ml-id-lab3</strong></li>
+<li>QA Endpoint Stack: <strong>qa-[Your-Initials]-ml-id-lab3</strong></li>
+</ul>
+<ol>
+<li>While waiting for the stacks to be deleted, delete all objects in the bucket ending with <strong>…artifact-store</strong>. The object in this bucket are versioned so in order to delete all objects click the Versions <strong>Show</strong> button. </li>
+</ol>
+<p><img src="Lab3/images/image-artifact-bucket-delete-versions.png" alt="image-20180911084458626" /></p>
+<blockquote>
+  <p>CloudFormation will not delete a stack with S3 buckets that are not empty. And it will not delete a stack with resources that another stack is depending on. Therefore both steps above need to be done in order for the next step to succeed. </p>
+</blockquote>
+<ol start="4">
+<li><p>When the two steps above are done, delete the CloudDeploy pipeline stack: <strong>[Your-Initials]-ml-id-lab3</strong></p></li>
+<li><p>From Lab 2 delete the Sagemaker resources manually using the console. This is done by moving the respective console table, selecting the resource, and use the <strong>Actions -> Delete</strong> command.</p></li>
+</ol>
+<ul>
+<li>Development <strong>Endpoints</strong></li>
+<li>Development <strong>Endpoint configurations</strong></li>
+<li>Development <strong>Notebook instances</strong></li>
+</ul>
+<ol start="4">
+<li>From Lab 1delete the following resources</li>
+</ol>
+<ul>
+<li>Delete all data in S3 bucket <strong>[Your-Initials]-ml-id-lab</strong><ul>
+<li><strong>athena-results</strong> folder</li>
+<li><strong>movielens-data</strong> folder</li>
+<li><strong>sagemaker</strong> folder</li></ul></li>
+<li>Delete the CloudFormation stack <strong>[Your-Initials]-ml-lab1</strong></li>
+<li>Delete the resources that were created from Glue, by selecting the resource and clicking <strong>Actions -> Delete</strong><ul>
+<li>Crawler</li></ul></li>
+</ul>
+<ol start="4">
+<li>You're done!</li>
+</ol></body></html>
